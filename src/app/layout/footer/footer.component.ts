@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
+  appName = 'Languages App';
+  currentYear = new Date().getFullYear();
+  repoUrl = 'https://github.com/diprefranco/languages-app-front';
 
   constructor() { }
 
