@@ -1,5 +1,3 @@
 <mat-action-list class="sidebar">
-  <button mat-list-item>Option 1</button>
-  <button mat-list-item>Option 2</button>
-  <button mat-list-item>Option 3</button>
+  <button *ngFor="let item of menuItems" mat-list-item>{{item.Name}}</button>
 </mat-action-list>
