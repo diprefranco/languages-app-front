@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { appRoutes } from 'src/app/constants/app-routes';
 import { MenuItem } from './menu-item.interface';
 
 @Component({
@@ -9,7 +10,7 @@ import { MenuItem } from './menu-item.interface';
 export class SidebarComponent {
   menuItems: MenuItem[] = [{
     Name: 'New lesson',
-    Route: 'new-lesson'
+    Route: `${appRoutes.LessonsModule.Base}/${appRoutes.LessonsModule.New}`
   }];
   
 }
