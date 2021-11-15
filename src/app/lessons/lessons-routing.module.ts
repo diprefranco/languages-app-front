@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { appRoutes } from '../constants/app-routes';
-import { NewLessonComponent } from './new-lesson/new-lesson.component';
+import { NewLessonComponent } from './components/new-lesson/new-lesson.component';
 
 const routes: Routes = [
   {
