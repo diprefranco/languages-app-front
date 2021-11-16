@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-new-lesson',
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-lesson.component.css']
 })
 export class NewLessonComponent implements OnInit {
+  wordForm: FormGroup;
+  wordsLearnt: string[] = [];
 
-  constructor() { }
+  ngOnInit() {
+    this.setWordForm();
+  }
 
-  ngOnInit(): void {
+  get wordFormInput() { return this.wordForm.get('wordFormInput') }
+  private setWordForm() {
+    this.wordForm = new FormGroup({
+      wordFormInput: new FormControl('')
+    });
+  }
+
+  wordFormSubmit() {
+    this.wordsLearnt.push(this.wordFormInput?.value);
   }
 
 }

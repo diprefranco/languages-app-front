@@ -3,19 +3,19 @@
   <mat-card-subtitle>Type new words!</mat-card-subtitle>
   <mat-card-content>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Word</mat-label>
-      <input matInput type="text" />
-    </mat-form-field>
+    <form [formGroup]="wordForm" (ngSubmit)="wordFormSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>Word</mat-label>
+        <input matInput type="text" formControlName="wordFormInput" />
+      </mat-form-field>
+  
+      <button mat-mini-fab color="primary" class="done-button" type="submit">
+        <mat-icon>done</mat-icon>
+      </button>
+    </form>
 
-    <button mat-mini-fab color="primary" class="done-button">
-      <mat-icon>done</mat-icon>
-    </button>
-
-    <mat-list role="list">
-      <mat-list-item role="listitem">Word 1</mat-list-item>
-      <mat-list-item role="listitem">Word 2</mat-list-item>
-      <mat-list-item role="listitem">Word 3</mat-list-item>
+    <mat-list *ngFor="let word of wordsLearnt" role="list">
+      <mat-list-item role="listitem">{{word}}</mat-list-item>
     </mat-list>
 
   </mat-card-content>
