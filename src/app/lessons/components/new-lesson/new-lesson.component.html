@@ -1,1 +1,26 @@
-<p>new-lesson works!</p>
+<mat-card>
+  <mat-card-title>New lesson</mat-card-title>
+  <mat-card-subtitle>Type new words!</mat-card-subtitle>
+  <mat-card-content>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Word</mat-label>
+      <input matInput type="text" />
+    </mat-form-field>
+
+    <button mat-mini-fab color="primary" class="done-button">
+      <mat-icon>done</mat-icon>
+    </button>
+
+    <mat-list role="list">
+      <mat-list-item role="listitem">Word 1</mat-list-item>
+      <mat-list-item role="listitem">Word 2</mat-list-item>
+      <mat-list-item role="listitem">Word 3</mat-list-item>
+    </mat-list>
+
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-flat-button color="primary">OK</button>
+    <button mat-flat-button>Cancel</button>
+  </mat-card-actions>
+</mat-card>
