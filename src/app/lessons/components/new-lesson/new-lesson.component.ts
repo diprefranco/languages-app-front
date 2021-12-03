@@ -10,6 +10,7 @@ export class NewLessonComponent implements OnInit, AfterViewChecked {
   wordForm: FormGroup;
   wordsLearnt: string[] = [];
   @ViewChild('wordInput') wordInputElement: ElementRef;
+  readonly homePageRoute = '';
 
   constructor(
     private cdRef: ChangeDetectorRef
