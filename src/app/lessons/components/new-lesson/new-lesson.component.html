@@ -6,7 +6,10 @@
     <form [formGroup]="wordForm" (ngSubmit)="wordFormSubmit()">
       <mat-form-field appearance="fill">
         <mat-label>Word</mat-label>
-        <input #wordInput matInput type="text" formControlName="wordFormInput" />
+        <input #wordInput matInput type="text" formControlName="wordFormInput" (keyup.esc)="wordForm.reset()" />
+        <button [style.visibility]="wordFormInput?.value ? 'visible': 'hidden'" matSuffix mat-icon-button aria-label="Clear" (click)="wordForm.reset()">
+          <mat-icon>close</mat-icon>
+        </button>
       </mat-form-field>
   
       <button mat-mini-fab color="primary" class="done-button" type="submit" [disabled]="!wordForm.valid">
