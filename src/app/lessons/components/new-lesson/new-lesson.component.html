@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-title>New lesson</mat-card-title>
+  <mat-card-subtitle>Type new words!</mat-card-subtitle>
+  <mat-card-content>
+
+    <form [formGroup]="wordForm" (ngSubmit)="wordFormSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>Word</mat-label>
+        <input #wordInput matInput type="text" formControlName="wordFormInput" (keyup.esc)="wordForm.reset()" />
+        <button type="button" [style.visibility]="wordFormInput?.value ? 'visible': 'hidden'" matSuffix mat-icon-button aria-label="Clear" (click)="wordForm.reset()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+  
+      <button mat-mini-fab color="primary" class="done-button" type="submit" [disabled]="!wordForm.valid">
+        <mat-icon>done</mat-icon>
+      </button>
+    </form>
+
+    <mat-list *ngFor="let word of wordsLearnt" role="list">
+      <mat-list-item role="listitem">{{word}}</mat-list-item>
+    </mat-list>
+
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-flat-button color="primary">OK</button>
+    <button mat-flat-button [routerLink]="homePageRoute">Cancel</button>
+  </mat-card-actions>
+</mat-card>
